@@ -68,3 +68,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .text-outline {
+    text-shadow: 
+      1px 1px 0 #00000031, 
+      -1px -1px 0 #00000031, 
+      -1px 1px 0 #00000031, 
+      1px -1px 0 #00000031;
+  }
+}

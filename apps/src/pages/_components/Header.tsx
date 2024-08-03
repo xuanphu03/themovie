@@ -23,7 +23,7 @@ export default function Header() {
           {TAB_LIST_HEADER.map(tab => (
             <li key={tab.id} className="group relative cursor-pointer">
               <p className="font-bold">{tab.title}</p>
-              <ul className="absolute hidden w-40 rounded-md border bg-background py-2 shadow-md group-hover:block">
+              <ul className="absolute hidden w-40 rounded-md border bg-background py-2 -left-2 shadow-md group-hover:block z-10">
                 {tab.child.map(child => (
                   <li className="rounded-sm px-4 py-1 hover:bg-secondary">{child.name}</li>
                 ))}
