@@ -14,7 +14,7 @@ export default function Banner({ data }: BannerProps) {
   const imgUrl = `${IMAGE_URL}/${data[index].backdrop_path}`
 
   return (
-    <div className="relative flex h-96 flex-col justify-between overflow-hidden">
+    <div className="relative flex h-113 flex-col justify-between overflow-hidden">
       <div className=" grayscale">
         <img src={imgUrl} alt="banner" />
       </div>
