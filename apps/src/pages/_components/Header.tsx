@@ -14,7 +14,7 @@ import { CircleUser, Info, Search } from 'lucide-react'
 
 export default function Header() {
   return (
-    <div className="flex items-center justify-between px-10 shadow-sm">
+    <div className="flex items-center justify-between px-10 shadow-sm fixed z-50 bg-background w-full">
       <div className="flex items-center gap-5">
         <Link to="/">
           <img src={Logo} alt="logo" width={150} />
