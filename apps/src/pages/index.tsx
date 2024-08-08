@@ -5,6 +5,7 @@ import Header from './_components/Header'
 import Trending from './_components/Trending'
 import Popular from './_components/Popular'
 import TopRated from './_components/TopRated'
+import Footer from './_components/Footer'
 
 export default function Home() {
   const { data } = useQuery({
@@ -19,6 +20,7 @@ export default function Home() {
       <Trending />
       <Popular />
       <TopRated />
+      <Footer />
     </div>
   )
 }
