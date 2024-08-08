@@ -1,18 +1,20 @@
-import Header from "./_components/Header";
-import Banner from "./_components/Banner";
-import { useQuery } from "@tanstack/react-query";
-import { getMovieNowPlaying } from "@/apis/movie";
+import { getMovieNowPlaying } from '@/apis/movie'
+import { useQuery } from '@tanstack/react-query'
+import Banner from './_components/Banner'
+import Header from './_components/Header'
+import Trending from './_components/Trending'
 
 export default function Home() {
   const { data } = useQuery({
     queryKey: ['movie-now-playing'],
-    queryFn: getMovieNowPlaying,
+    queryFn: getMovieNowPlaying
   })
 
   return (
     <div>
       <Header />
       <Banner data={data} />
+      <Trending />
     </div>
   )
 }

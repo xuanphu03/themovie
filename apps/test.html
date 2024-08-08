@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Circle</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .progress-ring {
+      width: 100px;
+      height: 100px;
+    }
+
+    .progress-ring__circle {
+      fill: transparent;
+      stroke: #4ade80;
+      /* màu stroke */
+      stroke-width: 6;
+      stroke-dasharray: 126;
+      /* tổng chu vi của hình tròn */
+      stroke-dashoffset: 126;
+      /* bắt đầu từ 0 */
+      transition: stroke-dashoffset 0.35s;
+      transform-origin: 50% 50%;
+    }
+  </style>
+</head>
+
+<body class="flex bg-gray-100">
+  <div class="m-auto">
+    <svg class="progress-ring">
+      <circle class="progress-ring__circle stroke-black" cx="50" cy="50" r="40"></circle>
+      <circle class="progress-ring__circle" cx="50" cy="50" r="40"></circle>
+    </svg>
+  </div>
+  <script>
+    const circle = document.querySelector('.progress-ring__circle');
+    const radius = circle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+
+    circle.style.strokeDasharray = `${circumference} ${circumference}`;
+    circle.style.strokeDashoffset = circumference;
+
+    function setProgress(percent) {
+      const offset = circumference - percent / 100 * circumference;
+      circle.style.strokeDashoffset = offset;
+    }
+
+    setProgress(10);
+  </script>
+</body>
+
+</html>

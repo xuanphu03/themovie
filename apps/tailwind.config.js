@@ -66,6 +66,10 @@ module.exports = {
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' }
+        },
+        'animation-swich-right': {
+          '0%': { opacity: 0, transform: 'translateX(0)' },
+          '100%': { opacity: 1, transform: 'translateX(2rem)' }
         }
       },
       animation: {
@@ -74,5 +78,5 @@ module.exports = {
       }
     }
   },
-  plugins: [require('tailwindcss-animate')]
+  plugins: [require('tailwindcss-animated')]
 }
