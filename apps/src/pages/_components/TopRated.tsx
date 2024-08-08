@@ -1,24 +1,24 @@
-import { getMoviePopular } from '@/apis/movie'
+import { getMovieTopRated } from '@/apis/movie'
 import ProgressCircle from '@/components/ui/progress-circle'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 import { MovieProps } from '@/lib/interface'
 import { useQuery } from '@tanstack/react-query'
 
-export default function Popular() {
-  const data = useQuery({
-    queryKey: ['get-movie-poular'],
-    queryFn: getMoviePopular
+export default function TopRated() {
+  const movieTopRated = useQuery({
+    queryKey: ['get-movie-trending-today'],
+    queryFn: getMovieTopRated
   })
 
   return (
     <div className="px-10">
-      <div className="mt-10">
-        <p className="text-xl font-bold">What's Popular</p>
+      <div className="mt-5">
+        <p className="text-xl font-bold">Movie Top-Rated</p>
       </div>
 
       <ScrollArea className="whitespace-nowrap">
         <div className="flex w-max space-x-4 p-4">
-          {data?.data?.map((movie: MovieProps) => (
+          {movieTopRated?.data?.map((movie: MovieProps) => (
             <div key={movie.id} className="w-48 shadow-md rounded-md p-2 hover:opacity-80 transition-opacity">
               <div className="relative">
                 <img

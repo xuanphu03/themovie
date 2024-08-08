@@ -10,6 +10,11 @@ export const getMoviePopular = async () => {
   return res.results
 }
 
+export const getMovieTopRated = async () => {
+  const res = await request.get(`movie/top_rated`)
+  return res.results
+}
+
 export const getMovieTrendingToday = async () => {
   const res = await request.get(`trending/movie/day`)
   return res.results
