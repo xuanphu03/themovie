@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query'
 import Banner from './_components/Banner'
 import Header from './_components/Header'
 import Trending from './_components/Trending'
+import Popular from './_components/Popular'
 
 export default function Home() {
   const { data } = useQuery({
@@ -15,6 +16,7 @@ export default function Home() {
       <Header />
       <Banner data={data} />
       <Trending />
+      <Popular />
     </div>
   )
 }

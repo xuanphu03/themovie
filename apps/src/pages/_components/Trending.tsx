@@ -1,17 +1,10 @@
 import { getMovieTrendingToday, getMovieTrendingWeek } from '@/apis/movie'
 import ProgressCircle from '@/components/ui/progress-circle'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
+import { MovieProps } from '@/lib/interface'
 import { cn } from '@/lib/utils'
 import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
-
-interface MovieProps {
-  id: number
-  poster_path: string
-  title: string
-  release_date: string
-  vote_average: number
-}
 
 export default function Trending() {
   const [isToday, setIsToday] = useState(true)
